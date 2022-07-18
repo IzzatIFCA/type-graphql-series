@@ -24,7 +24,7 @@ const schema = await buildSchema({
     apolloServer.applyMiddleware({app});
 
     app.listen(4000, () => {
-        console.log('server started on http://localhost:4000');
+        console.log('server started on http://localhost:4000/graphql');
 });
 
 }
