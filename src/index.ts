@@ -6,7 +6,7 @@ import "reflect-metadata";
 @Resolver()
 class HelloResolver{
 
-  @Query(() => String)
+  @Query(() => String, {name: "helloWorld"})
   async hello() {
     return "Hello World";
   }
@@ -18,9 +18,7 @@ const schema = await buildSchema({
 });
 
     const apolloServer = new ApolloServer({schema});
-
     const app = Express();
-
     apolloServer.applyMiddleware({app});
 
     app.listen(4000, () => {
